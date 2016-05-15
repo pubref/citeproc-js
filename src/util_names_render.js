@@ -82,7 +82,7 @@ CSL.NameOutput.prototype.renderInstitutionNames = function () {
             this.institutions[v][j] = institution;
         }
     }
-}
+};
 
 CSL.NameOutput.prototype._renderInstitutionName = function (v, name, slot, j) {
     res = this.getName(name, slot.primary, true);
@@ -196,7 +196,7 @@ CSL.NameOutput.prototype._composeOneInstitutionPart = function (names, slot, sty
         institutionblob = primary;
     }
     return institutionblob;
-}
+};
 
 CSL.NameOutput.prototype._renderOneInstitutionPart = function (blobs, style) {
     for (var i = 0, ilen = blobs.length; i < ilen; i += 1) {
@@ -290,7 +290,7 @@ CSL.NameOutput.prototype._renderNames = function (v, values, pos, j) {
         ret = this.joinPersons(names, pos, j);
     }
     return ret
-}
+};
 
 
 CSL.NameOutput.prototype._renderPersonalName = function (v, name, slot, pos, i, j) {
@@ -783,8 +783,8 @@ CSL.NameOutput.prototype.getName = function (name, slotLocaleset, fallback, stop
     if (slotLocaleset !== 'locale-orig') {
         foundTag = false;
         if (name.multi) {
-            var langTags = this.state.opt[slotLocaleset]
-            for (i = 0, ilen = langTags.length; i < ilen; i += 1) {
+            var langTags = this.state.opt[slotLocaleset];
+            for (var i = 0, ilen = langTags.length; i < ilen; i += 1) {
                 langTag = langTags[i];
                 if (name.multi._key[langTag]) {
                     foundTag = true;
@@ -859,15 +859,15 @@ CSL.NameOutput.prototype.getName = function (name, slotLocaleset, fallback, stop
         usedOrig = !foundTag;
     }
     return {name:name,usedOrig:usedOrig};
-}
+};
 
 CSL.NameOutput.prototype.getNameParams = function (langTag) {
     var ret = {};
     var langspec = CSL.localeResolve(this.Item.language, this.state.opt["default-locale"][0]);
     var try_locale = this.state.locale[langspec.best] ? langspec.best : this.state.opt["default-locale"][0];
-    var name_as_sort_order = this.state.locale[try_locale].opts["name-as-sort-order"]
-    var name_as_reverse_order = this.state.locale[try_locale].opts["name-as-reverse-order"]
-    var name_never_short = this.state.locale[try_locale].opts["name-never-short"]
+    var name_as_sort_order = this.state.locale[try_locale].opts["name-as-sort-order"];
+    var name_as_reverse_order = this.state.locale[try_locale].opts["name-as-reverse-order"];
+    var name_never_short = this.state.locale[try_locale].opts["name-never-short"];
     var field_lang_bare = langTag.split("-")[0];
     if (name_as_sort_order && name_as_sort_order[field_lang_bare]) {
         ret["static-ordering"] = true;
@@ -885,7 +885,7 @@ CSL.NameOutput.prototype.getNameParams = function (langTag) {
         ret["block-initialize"] = true;
     }
     return ret;
-}
+};
 
 CSL.NameOutput.prototype.setRenderedName = function (name) {
     if (this.state.tmp.area === "bibliography") {
@@ -897,7 +897,7 @@ CSL.NameOutput.prototype.setRenderedName = function (name) {
         }
         this.state.tmp.rendered_name.push(strname);
     }
-}
+};
 
 CSL.NameOutput.prototype.fixupInstitution = function (name, varname, listpos) {
 
@@ -932,7 +932,7 @@ CSL.NameOutput.prototype.fixupInstitution = function (name, varname, listpos) {
         name["short"] = [];
     }
     return name;
-}
+};
 
 
 CSL.NameOutput.prototype.getStaticOrder = function (name, refresh) {
@@ -954,7 +954,7 @@ CSL.NameOutput.prototype.getStaticOrder = function (name, refresh) {
         }
     }
     return static_ordering_val;
-}
+};
 
 
 CSL.NameOutput.prototype._splitInstitution = function (value, v, i) {
