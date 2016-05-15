@@ -113,7 +113,7 @@ CSL.Util.substituteStart = function (state, target) {
             if (!state.tmp.just_looking && !state.tmp.suppress_decorations) {
                 // Attach item data and variable names.
                 // Do with them what you will.
-                variable_entry = new CSL.Token("text", CSL.START);
+                var variable_entry = new CSL.Token("text", CSL.START);
                 variable_entry.decorations = [["@showid", "true"]];
                 state.output.startTag("variable_entry", variable_entry);
                 var position = null;
@@ -126,7 +126,7 @@ CSL.Util.substituteStart = function (state, target) {
                     "subsequent",
                     "ibid",
                     "ibid-with-locator"
-                ]
+                ];
                 var noteNumber = 0;
                 if (item && item.noteIndex) {
                     noteNumber = item.noteIndex;
@@ -157,7 +157,7 @@ CSL.Util.substituteStart = function (state, target) {
                 };
                 state.output.current.value().params = params;
             }
-        }
+        };
         this.execs.push(func);
     }
 };
@@ -173,7 +173,7 @@ CSL.Util.substituteEnd = function (state, target) {
             if (!state.tmp.just_looking && !state.tmp.suppress_decorations) {
                 state.output.endTag("variable_entry");
             }
-        }
+        };
         this.execs.push(func);
     }
 
