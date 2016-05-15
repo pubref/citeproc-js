@@ -21,7 +21,7 @@ CSL.getSortCompare = function (default_locale) {
     };
     var stripPunct = function (str) {
         return str.replace(/^[\[\]\'\"]*/g, "");
-    }
+    };
     var getBracketPreSort = function () {
         if (!strcmp("[x","x")) {
             return false;
@@ -30,7 +30,7 @@ CSL.getSortCompare = function (default_locale) {
                 return strcmp(stripPunct(a), stripPunct(b));
             }
         }
-    }
+    };
     var bracketPreSort = getBracketPreSort();
     var sortCompare = function (a, b) {
         if (bracketPreSort) {
@@ -38,6 +38,6 @@ CSL.getSortCompare = function (default_locale) {
         } else {
             return strcmp(a, b);
         }
-    }
+    };
     return sortCompare;
 };
