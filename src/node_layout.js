@@ -59,7 +59,7 @@ CSL.Node.layout = {
                         state.output.current.value().suffix_txt = item.suffix_txt;
                     }
                 }
-            }
+            };
             this.execs.push(func);
         }
 
@@ -106,7 +106,7 @@ CSL.Node.layout = {
                     }
                 }
                 state.output.openLevel(tok);
-            }
+            };
             this.execs.push(func);
             target.push(this);
 
@@ -292,7 +292,7 @@ CSL.Node.layout = {
                         
                         state.output.endTag(); // closes citation link wrapper
                     }
-                }
+                };
                 this.execs.push(func);
                 target.push(this);
                 state.build.layout_flag = false;
