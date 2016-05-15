@@ -70,7 +70,7 @@ CSL.Engine.prototype.remapSectionVariable = function (inputList) {
             // And that's it. Pre-parse complete.
         }
     }
-}
+};
 
 
 CSL.Engine.prototype.setNumberLabels = function (Item) {
@@ -115,4 +115,4 @@ CSL.Engine.prototype.setNumberLabels = function (Item) {
             this.tmp.shadow_numbers["number"].numeric = true;
         }
     }
-}
+};
