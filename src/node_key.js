@@ -206,7 +206,7 @@ CSL.Node.key = {
                     }
                     var key = CSL.Util.padding("" + year_suffix);
                     state[state.tmp.area].keys.push(key);
-                }
+                };
                 end_key.execs.push(func);
             }
             state.build.date_key = false;
