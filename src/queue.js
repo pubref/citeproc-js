@@ -692,13 +692,13 @@ CSL.Output.Queue.adjust = function (punctInQuote) {
     var NO_SWAP_IN = {
         ";": true,
         ":": true
-    }
+    };
 
     var NO_SWAP_OUT = {
         ".": true,
         "!": true,
         "?": true
-    }
+    };
 
     this.upward = upward;
     this.leftward = leftward;
@@ -748,7 +748,7 @@ CSL.Output.Queue.adjust = function (punctInQuote) {
             ",": ";,",
             ".": ";"
         }
-    }
+    };
 
     var SWAP_IN = {};
     var SWAP_OUT = {};
@@ -787,7 +787,7 @@ CSL.Output.Queue.adjust = function (punctInQuote) {
         }
         if (!blob.blobs || "object" !==  typeof blob.blobs) return false;
         if (blobEndsInNumber(blob.blobs[blob.blobs.length-1])) return true;
-    }
+    };
     
     function blobHasDecorations(blob,includeQuotes) {
         var ret = false;
@@ -822,7 +822,7 @@ CSL.Output.Queue.adjust = function (punctInQuote) {
         //    return true
         //};
         //return false;
-    }
+    };
     
     function blobHasDescendantMergingPunctuation(parentChar,blob) {
         var childChar = blob.strings.suffix.slice(-1);
@@ -836,7 +836,7 @@ CSL.Output.Queue.adjust = function (punctInQuote) {
         if ("object" !== typeof blob.blobs) return false;
         if (blobHasDescendantMergingPunctuation(parentChar,blob.blobs[blob.blobs.length-1])) return true;
         return false;
-    }
+    };
     
     function matchLastChar(blob, chr) {
         if (!PUNCT[chr]) {
@@ -1176,6 +1176,7 @@ CSL.Output.Queue.adjust = function (punctInQuote) {
 
         //print("  end");
     };
+    
     // Abstract out a couple of utility functions, used in fix() below.
     function swapToTheLeft (child) {
         var childChar = child.strings.suffix.slice(0,1);
@@ -1190,7 +1191,8 @@ CSL.Output.Queue.adjust = function (punctInQuote) {
                 childChar = child.strings.suffix.slice(0,1);
             }
         }
-    }
+    };
+    
     function swapToTheRight (child) {
         if ("string" === typeof child.blobs) {
             var childChar = child.blobs.slice(-1);
@@ -1205,7 +1207,7 @@ CSL.Output.Queue.adjust = function (punctInQuote) {
                 childChar = child.blobs[child.blobs.length-1].strings.suffix.slice(-1);
             }
         }
-    }
+    };
 
     function fix (parent) {
         // Terminus if no blobs
@@ -1244,4 +1246,4 @@ CSL.Output.Queue.adjust = function (punctInQuote) {
         }
         return lastChar;
     };
-}
+};
