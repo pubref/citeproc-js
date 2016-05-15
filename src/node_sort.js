@@ -40,7 +40,7 @@ CSL.Node.sort = {
                     state.tmp.lang_sort_hold = state.opt.lang;
                     state.opt.lang = langForItem;
                 }
-            }
+            };
             this.execs.push(func);
             
         }
@@ -52,7 +52,7 @@ CSL.Node.sort = {
                     state.opt.lang = state.tmp.lang_sort_hold;
                     delete state.tmp.lang_sort_hold;
                 }
-            }
+            };
             this.execs.push(func);
             /*
             var func = function (state, Item) {
