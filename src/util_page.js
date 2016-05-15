@@ -136,7 +136,8 @@ CSL.Util.PageRangeMangler.getFunction = function (state, rangeType) {
 		var lst = expand(str);
         var ret = func(lst, minchars, isyear);
         return ret;
-    }
+    };
+    
     if (!state.opt[rangeType + "-range-format"]) {
         ret_func = function (str) {
             //return str.replace("-", "\u2013", "g");
