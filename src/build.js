@@ -291,7 +291,7 @@ CSL.makeBuilder = function (me, target) {
                     continue;
                 }
                 if (me.cslXml.nodename(node) === "date") {
-                    CSL.Util.fixDateNode.call(me, origparent, i, node)
+                    CSL.Util.fixDateNode.call(me, origparent, i, node);
                     node = me.cslXml.children(origparent)[i];
                 }
                 buildStyle(node, enterFunc, leaveFunc, singletonFunc);
