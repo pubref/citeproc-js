@@ -675,4 +675,4 @@ CSL.Parallel.prototype.purgeGroupsIfParallel = function (original_condition) {
         }
         this.parallel_conditional_blobs_list.pop();
     }
-}
+};
