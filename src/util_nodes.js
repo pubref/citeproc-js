@@ -20,7 +20,7 @@ CSL.tokenExec = function (token, Item, item) {
             this.tmp.jump.replace("fail");
             return token.fail;
         }
-    }
+    };
     if (token.test) {
         next = record.call(this,token.test(Item, item));
     }
