@@ -9,7 +9,7 @@ CSL.getSortCompare = function (default_locale) {
         sensitivity:"base",
         ignorePunctuation:true,
         numeric:true
-   }
+   };
     // In order, attempt the following:
     //   (1) Set locale collation from processor language
     //   (2) Use localeCompare()
