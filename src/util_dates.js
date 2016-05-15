@@ -146,7 +146,7 @@ CSL.Util.Dates.normalizeMonth = function (num, useSeason) {
         ret = num;
     }
     return ret;
-}
+};
 
 CSL.Util.Dates.month = {};
 
