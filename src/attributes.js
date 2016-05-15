@@ -10,9 +10,9 @@ CSL.Attributes["@genre"] = function (state, arg) {
             return true;
         }
         return false;
-    }
+    };
     this.tests.push(func);
-}
+};
 
 CSL.Attributes["@disambiguate"] = function (state, arg) {
     if (arg === "true") {
@@ -64,7 +64,7 @@ CSL.Attributes["@is-numeric"] = function (state, arg, joiner) {
                 }
             }
             return false;
-        }
+        };
     }
     for (var i=0; i<variables.length; i+=1) {
         this.tests.push(maketest(variables[i]));
@@ -82,8 +82,8 @@ CSL.Attributes["@is-uncertain-date"] = function (state, arg) {
             } else {
                 return false;
             }
-        }
-    }
+        };
+    };
     for (var i=0,ilen=variables.length;i<ilen;i+=1) {
         this.tests.push(maketest(variables[i]));
     };
@@ -104,8 +104,8 @@ CSL.Attributes["@locator"] = function (state, arg) {
             } else {
                 return false;
             }
-        }
-    }
+        };
+    };
     for (var i=0,ilen=trylabels.length;i<ilen;i+=1) {
         this.tests.push(maketest(trylabels[i]));
     }
@@ -135,8 +135,8 @@ CSL.Attributes["@position"] = function (state, arg) {
                 return true;
             }
             return false;
-        }
-    }
+        };
+    };
     for (var i=0,ilen=trypositions.length;i<ilen;i+=1) {
         var tryposition = trypositions[i];
         if (tryposition === "first") {
@@ -388,8 +388,8 @@ CSL.Attributes["@variable"] = function (state, arg) {
                     }
                 }
                 return false;
-            }
-        }
+            };
+        };
         for (var i=0,ilen=this.variables.length;i<ilen;i+=1) {
             this.tests.push(maketest(this.variables[i]));
         }
@@ -417,8 +417,8 @@ CSL.Attributes["@page"] = function (state, arg) {
             } else {
                 return false;
             }
-        }
-    }
+        };
+    };
     for (var i=0,ilen=trylabels.length;i<ilen;i+=1) {
         this.tests.push(maketest(trylabels[i]));
     }
@@ -445,8 +445,8 @@ CSL.Attributes["@number"] = function (state, arg) {
             } else {
                 return false;
             }
-        }
-    }
+        };
+    };
     for (var i=0,ilen=trylabels.length;i<ilen;i+=1) {
         this.tests.push(maketest(trylabels[i]));
     }
@@ -477,8 +477,8 @@ CSL.Attributes["@jurisdiction"] = function (state, arg) {
                 // break;
             }
             return true;
-        }
-    }
+        };
+    };
     for (var i=0,ilen=tryjurisdictions.length;i<ilen;i+=1) {
         var tryjurisdictionSlice = tryjurisdictions[i].slice();
         this.tests.push(maketests(tryjurisdictionSlice));
@@ -507,8 +507,8 @@ CSL.Attributes["@has-year-only"] = function (state, arg) {
             } else {
                 return true;
             }
-        }
-    }
+        };
+    };
     for (var i=0,ilen=trydates.length;i<ilen;i+=1) {
         this.tests.push(maketest(trydates[i]));
     }
@@ -524,8 +524,8 @@ CSL.Attributes["@has-to-month-or-season"] = function (state, arg) {
             } else {
                 return true;
             }
-        }
-    }
+        };
+    };
     for (var i=0,ilen=trydates.length;i<ilen;i+=1) {
         this.tests.push(maketest(trydates[i]));
     }
@@ -541,8 +541,8 @@ CSL.Attributes["@has-day"] = function (state, arg) {
             } else {
                 return true;
             }
-        }
-    }
+        };
+    };
     for (var i=0,ilen=trydates.length;i<ilen;i+=1) {
         this.tests.push(maketest(trydates[i]));
     };
@@ -682,8 +682,8 @@ CSL.Attributes["@locale"] = function (state, arg) {
                     res = true;
                 }
                 return res;
-            }
-        }
+            };
+        };
         this.tests.push(maketest(locale_list,locale_default,locale_bares));
     }
 };
@@ -700,8 +700,8 @@ CSL.Attributes["@authority-residue"] = function (state, arg) {
             } else {
                 return !succeed;
             }
-        }
-    }
+        };
+    };
     this.tests.push(maketest());
 }
 
@@ -780,11 +780,11 @@ CSL.Attributes["@locale-internal"] = function (state, arg) {
                     }
                 }
                 return res;
-            }
-        }
+            };
+        };
         var me = this;
         this.tests.push(maketest(me));
-}
+};
 
 
 // This one is not evaluated as a condition: it only
@@ -813,7 +813,7 @@ CSL.Attributes["@require"] = function (state, arg) {
     // This attribute is a complement to @label-form and modular
     // jurisdiction support, as it makes macros that adapt to shifting
     // local term definitions possible.
-}
+};
 
 CSL.Attributes["@reject"] = function (state, arg) {
     this.strings.reject = arg;
@@ -826,11 +826,11 @@ CSL.Attributes["@reject"] = function (state, arg) {
     // This attribute is a complement to @label-form and modular
     // jurisdiction support, as it makes macros that adapt to shifting
     // local term definitions possible.
-}
+};
 
 CSL.Attributes["@gender"] = function (state, arg) {
     this.gender = arg;
-}
+};
 
 CSL.Attributes["@cslid"] = function (state, arg) {
     // @cslid is a noop
